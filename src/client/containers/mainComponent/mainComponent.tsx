@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <p>Everything is working properly.</p>
+        <p>I'm working!</p>
       </React.Fragment>
     );
   }
