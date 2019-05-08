@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var path = require('path');
+var os = require('os');
 /*
  * Initializing the Express App.
  */
