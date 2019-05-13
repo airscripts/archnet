@@ -1,11 +1,25 @@
-import React, { Component } from 'react';
+/**
+ * Importing dependencies.
+ */
+import React, { Component } from "react";
+
+/**
+ * Importing components.
+ */
+import General from "../../components/generalSpecsComponent";
+
+/**
+ * Importing styles.
+ */
+import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../styles/mainComponent.css";
 
 class Main extends Component {
   render() {
     return (
-      <React.Fragment>
-        <p>I'm working!</p>
-      </React.Fragment>
+      <div className="mainComponentBody bg-dark">
+        <General />
+      </div>
     );
   }
 }

@@ -5,6 +5,11 @@ const express = require('express');
 const path = require('path');
 const os = require('os');
 
+/**
+ * Importing routers.
+ */
+const generalSpecsRouter = require("./src/server/routes/generalSpecsRoute.js");
+
 /*
  * Initializing the Express App.
  */
@@ -14,6 +19,11 @@ const app = express();
  * Defining useful constants.
  */
 const port = process.env.PORT || 8080;
+
+/**
+ * Setting the endpoints.
+ */
+app.use("/general", generalSpecsRouter);
 
 /*
  * Defining static files directory root.
