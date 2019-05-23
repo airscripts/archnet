@@ -15,7 +15,20 @@ var generalSpecsRouter = express.Router();
 generalSpecsRouter.route('/')
     .get(function (req, res, next) {
     res.status(200);
-    res.send(os.arch());
+    var specsList = [
+        os.arch(),
+        os.cpus(),
+        os.endianness(),
+        os.freemem(),
+        os.homedir(),
+        os.hostname(),
+        os.networkInterfaces(),
+        os.platform(),
+        os.release(),
+        os.uptime(),
+        os.userInfo(),
+    ];
+    res.send(specsList);
 })
     .post(function (req, res, next) {
     res.status(303);
