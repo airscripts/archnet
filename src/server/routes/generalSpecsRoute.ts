@@ -15,7 +15,22 @@ const generalSpecsRouter = express.Router();
 generalSpecsRouter.route('/')
 .get((req: any, res: any, next: any) => {
   res.status(200);
-  res.send(os.arch());
+
+  let specsList: Object[] = [
+    os.arch(), 
+    os.cpus(), 
+    os.endianness(), 
+    os.freemem(),
+    os.homedir(),
+    os.hostname(),
+    os.networkInterfaces(),
+    os.platform(),
+    os.release(),
+    os.uptime(),
+    os.userInfo(),
+  ];
+
+  res.send(specsList);
 })
 
 .post((req: any, res: any, next: any) => {
@@ -34,3 +49,5 @@ generalSpecsRouter.route('/')
 });
 
 module.exports = generalSpecsRouter;
+
+export {};
