@@ -22,8 +22,8 @@ export type AppState = ReturnType<typeof rootReducer>;
  * Configuring the Redux Store.
  */
 export const configureStore = () => {
-    const store = createStore(
-        rootReducer,
-        applyMiddleware(thunk, logger)
-    );
+  const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk, logger)
+  );
 };
