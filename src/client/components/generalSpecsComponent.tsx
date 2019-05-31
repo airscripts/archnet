@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class General extends Component {
   render() {
     return (
-      <div></div>
+      <div>Welcome to Archnet</div>
     );
   }
 }
