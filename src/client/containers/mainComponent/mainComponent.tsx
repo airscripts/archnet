@@ -22,9 +22,13 @@ const store = configureStore();
 class Main extends Component {
   render() {
     return (
-        <div className="mainComponentBody bg-dark">
-          <General />
-        </div>
+      <Provider store={store}>
+        <Router>
+          <div className="mainComponentBody bg-dark">
+            <Route exact path="/" component={General} />
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

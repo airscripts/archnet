@@ -6,10 +6,15 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 /**
+ * Importing action reducers.
+ */
+import { generalReducer } from './reducers/generalReducer';
+
+/**
  * Combining all the reducers together.
  */
 const rootReducer = combineReducers({
-
+  general: generalReducer,
 });
 
 /**
@@ -26,4 +31,6 @@ export const configureStore = () => {
     rootReducer,
     applyMiddleware(thunk, logger)
   );
+
+  return store;
 };
