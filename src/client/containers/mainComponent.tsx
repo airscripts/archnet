@@ -8,14 +8,13 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 /**
  * Importing components.
  */
-import General from "../../components/generalSpecsComponent";
-import { configureStore } from "../../store/store";
+import Root from "../components/rootComponent";
+import { configureStore } from "../store/store";
 
 /**
  * Importing styles.
  */
-import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/mainComponent.css";
+import "../styles/mainComponent.css";
 
 const store = configureStore();
 
@@ -25,7 +24,7 @@ class Main extends Component {
       <Provider store={store}>
         <Router>
           <div className="mainComponentBody bg-dark">
-            <Route exact path="/" component={General} />
+            <Route exact path="/" component={Root} />
           </div>
         </Router>
       </Provider>

@@ -9,17 +9,17 @@ var redux_logger_1 = require("redux-logger");
 /**
  * Importing action reducers.
  */
-var generalReducer_1 = require("./reducers/generalReducer");
+var rootReducers_1 = require("./reducers/rootReducers");
 /**
  * Combining all the reducers together.
  */
-var rootReducer = redux_1.combineReducers({
-    general: generalReducer_1.generalReducer
+var rootReducers = redux_1.combineReducers({
+    root: rootReducers_1.rootReducer
 });
 /**
  * Configuring the Redux Store.
  */
 exports.configureStore = function () {
-    var store = redux_1.createStore(rootReducer, redux_1.applyMiddleware(redux_thunk_1["default"], redux_logger_1["default"]));
+    var store = redux_1.createStore(rootReducers, redux_1.applyMiddleware(redux_thunk_1["default"], redux_logger_1["default"]));
     return store;
 };

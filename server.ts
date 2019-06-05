@@ -4,11 +4,12 @@
 const express = require('express');
 const path = require('path');
 const os = require('os');
+const cors = require('cors');
 
 /**
  * Importing routers.
  */
-const generalSpecsRouter = require("./src/server/routes/generalSpecsRoute.js");
+const rootRouter = require("./src/server/routes/rootRoute.js");
 
 /*
  * Initializing the Express App.
@@ -23,7 +24,13 @@ const port = process.env.PORT || 8080;
 /**
  * Setting the endpoints.
  */
-app.use("/general", generalSpecsRouter);
+app.use("/root", rootRouter);
+
+/**
+ * Setting up the use of CORS Policy.
+ */
+app.use(cors());
+app.options('*', cors());
 
 /*
  * Defining static files directory root.
