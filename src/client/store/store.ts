@@ -8,13 +8,13 @@ import logger from 'redux-logger';
 /**
  * Importing action reducers.
  */
-import { generalReducer } from './reducers/generalReducer';
+import { rootReducer } from './reducers/rootReducers';
 
 /**
  * Combining all the reducers together.
  */
-const rootReducer = combineReducers({
-  general: generalReducer,
+const rootReducers = combineReducers({
+  root: rootReducer,
 });
 
 /**
@@ -28,7 +28,7 @@ export type AppState = ReturnType<typeof rootReducer>;
  */
 export const configureStore = () => {
   const store = createStore(
-    rootReducer,
+    rootReducers,
     applyMiddleware(thunk, logger)
   );
 

@@ -5,31 +5,22 @@ const express = require("express");
 const os = require("os");
 
 /**
- * Creating the generalSpecsRouter.
+ * Creating the rootRouter.
  */
-const generalSpecsRouter = express.Router();
+const rootRouter = express.Router();
 
 /**
  * Creating the endpoint.
  */
-generalSpecsRouter.route('/')
+rootRouter.route('/')
 .get((req: any, res: any, next: any) => {
   res.status(200);
 
   let specsList: Object[] = [
     os.arch(), 
-    os.cpus(), 
-    os.endianness(), 
-    os.freemem(),
-    os.homedir(),
-    os.hostname(),
-    os.networkInterfaces(),
-    os.platform(),
-    os.release(),
-    os.uptime(),
-    os.userInfo(),
   ];
 
+  console.log(specsList);
   res.send(specsList);
 })
 
@@ -48,6 +39,6 @@ generalSpecsRouter.route('/')
   res.redirect('/');
 });
 
-module.exports = generalSpecsRouter;
+module.exports = rootRouter;
 
 export {};
