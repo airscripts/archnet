@@ -8,7 +8,7 @@ const cors = require('cors');
 /**
  * Importing routers.
  */
-const rootRouter = require("./src/server/routes/rootRoute.js");
+const rootRouter = require("./src/server/routes/rootRoute");
 
 /*
  * Initializing the Express App.

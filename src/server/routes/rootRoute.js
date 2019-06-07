@@ -64,8 +64,8 @@ rootRouter.route('/')
         switch (_a.label) {
             case 0:
                 if (!(req.header("Content-Type") != "application/json")) return [3 /*break*/, 1];
-                res.status(300);
-                res.redirect('/');
+                res.status(404);
+                res.sendFile(path.join(__dirname, "../../../build", "index.html"));
                 return [3 /*break*/, 3];
             case 1:
                 res.status(200);

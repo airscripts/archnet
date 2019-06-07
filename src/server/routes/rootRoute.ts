@@ -25,8 +25,8 @@ function sleep(ms: number) {
 rootRouter.route('/')
 .get(async (req: any, res: any, next: any) => {
   if(req.header("Content-Type") != "application/json") {
-    res.status(300);
-    res.redirect('/');
+    res.status(404);
+    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
   }
 
   else {
