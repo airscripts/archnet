@@ -3,6 +3,7 @@
  */
 const express = require("express");
 const os = require("os");
+const path = require('path');
 
 /**
  * Creating the rootRouter.
@@ -23,14 +24,21 @@ function sleep(ms: number) {
  */
 rootRouter.route('/')
 .get(async (req: any, res: any, next: any) => {
-  res.status(200);
+  if(req.header("Content-Type") != "application/json") {
+    res.status(300);
+    res.redirect('/');
+  }
 
-  let specsList: Object[] = [
-    os.arch(), 
-  ];
+  else {
+    res.status(200);
 
-  await sleep(3000);
-  res.send(specsList);
+    let specsList: Object[] = [
+      os.arch(), 
+    ];
+  
+    await sleep(3000);
+    res.send(specsList);
+  }
 })
 
 .post((req: any, res: any, next: any) => {
