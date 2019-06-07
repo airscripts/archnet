@@ -42,33 +42,41 @@ export function rootFailure(errorFound: boolean) {
 /**
  * Fetching all the data from the root endpoint.
  */
-
-function getRoot() {
-    return fetch(rootEndpoint, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-    })
-
-    .then(response => response.json(), error => { throw error });
-}
-
-export function loadRoot() {
-    return ((dispatch: any) => {
-        dispatch(rootRequest(true));
-        
-        getRoot()
-        
-        .then((data: any) => {
-            dispatch(rootSuccess(data));
-        })
-
-        .catch((error: any) => {
-            console.log(error);
-            dispatch(rootFailure(true));
-        });
+export async function getRoot() {
+  try {
+    const response = await fetch(rootEndpoint, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
     });
+
+    const json = await response.json();
+    return json;
+  } 
+  
+  catch (error) {
+    throw error;
+  }
 }
 
+/**
+ * Defining the Redux Action that will load the root data
+ * that will be displayed.
+ */
+export function loadRoot() {
+  return async (dispatch: any) => {
+    dispatch(rootRequest(true));
+
+    await getRoot()
+      .then((data: any) => {
+        dispatch(rootSuccess(data));
+      })
+
+      .catch((error: any) => {
+        console.log(error);
+        dispatch(rootFailure(true));
+      });
+  };
+}
 
 
 
