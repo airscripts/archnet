@@ -31,22 +31,14 @@ interface IState {
  * hits the / endpoint.
  */
 class Root extends Component<AppProps, IState> {
-  constructor(props: AppProps) {
-    super(props);
-  }
-
   async componentDidMount() {
-    await new Promise((resolve) => {
-      this.props.loadRoot();
-      resolve();
-    });
+    await this.props.loadRoot();
   }
 
   render() {
     return (
       <React.Fragment>
         <p>{this.props.root.root}</p>
-        <p>I'm Reacting.</p>
       </React.Fragment>
     );
   }

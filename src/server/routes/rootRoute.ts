@@ -10,17 +10,26 @@ const os = require("os");
 const rootRouter = express.Router();
 
 /**
+ * Defining a sleep function
+ */
+function sleep(ms: number) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}
+
+/**
  * Creating the endpoint.
  */
 rootRouter.route('/')
-.get((req: any, res: any, next: any) => {
+.get(async (req: any, res: any, next: any) => {
   res.status(200);
 
   let specsList: Object[] = [
     os.arch(), 
   ];
 
-  console.log(specsList);
+  await sleep(3000);
   res.send(specsList);
 })
 
