@@ -3,12 +3,13 @@
  */
 import React, { Component } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 /**
  * Importing components.
  */
 import Root from "../components/rootComponent";
+import NotFound from "../components/notFoundComponent";
 import { configureStore } from "../store/store";
 
 /**
@@ -23,9 +24,10 @@ class Main extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="mainComponentBody bg-dark">
+          <Switch>
             <Route exact path="/" component={Root} />
-          </div>
+            <Route component={NotFound} />
+          </Switch>
         </Router>
       </Provider>
     );

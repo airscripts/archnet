@@ -3,12 +3,11 @@
  */
 var express = require('express');
 var path = require('path');
-var os = require('os');
 var cors = require('cors');
 /**
  * Importing routers.
  */
-var rootRouter = require("./src/server/routes/rootRoute.js");
+var rootRouter = require("./src/server/routes/rootRoute");
 /*
  * Initializing the Express App.
  */
