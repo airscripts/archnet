@@ -3,7 +3,6 @@
  */
 const express = require('express');
 const path = require('path');
-const os = require('os');
 const cors = require('cors');
 
 /**

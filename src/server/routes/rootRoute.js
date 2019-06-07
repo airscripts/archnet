@@ -41,6 +41,7 @@ exports.__esModule = true;
  */
 var express = require("express");
 var os = require("os");
+var path = require('path');
 /**
  * Creating the rootRouter.
  */
@@ -62,15 +63,21 @@ rootRouter.route('/')
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                if (!(req.header("Content-Type") != "application/json")) return [3 /*break*/, 1];
+                res.status(300);
+                res.redirect('/');
+                return [3 /*break*/, 3];
+            case 1:
                 res.status(200);
                 specsList = [
                     os.arch(),
                 ];
                 return [4 /*yield*/, sleep(3000)];
-            case 1:
+            case 2:
                 _a.sent();
                 res.send(specsList);
-                return [2 /*return*/];
+                _a.label = 3;
+            case 3: return [2 /*return*/];
         }
     });
 }); })
