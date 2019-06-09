@@ -3,6 +3,12 @@
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Grow from '@material-ui/core/Grow';
+
+/**
+ * Importing Drawer.
+ */
+import RootDrawer from "./rootDrawerComponent";
 
 /**
  * Importing actions and AppState from Redux Store.
@@ -25,7 +31,6 @@ interface IState {
 
 }
 
-
 /**
  * Root Component that will be represented when the user
  * hits the / endpoint.
@@ -34,11 +39,13 @@ class Root extends Component<AppProps, IState> {
   async componentDidMount() {
     await this.props.loadRoot();
   }
-
+  
   render() {
     return (
       <React.Fragment>
-        <p>{this.props.root.root}</p>
+        <Grow>
+          <RootDrawer />
+        </Grow>
       </React.Fragment>
     );
   }
