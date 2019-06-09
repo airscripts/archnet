@@ -22,7 +22,7 @@ export function rootRequest(newRequest: boolean) {
 /**
  * Defining rootSuccess action that takes an array of objects as a parameter.
  */
-export function rootSuccess(rootDatas: Object[]) {
+export function rootSuccess(rootDatas: object) {
     return {
         type: ROOT_SUCCESS,
         payload: rootDatas

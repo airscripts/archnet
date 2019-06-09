@@ -2,7 +2,7 @@
  * Setting up the interface for root data.
  */
 export interface IRoot {
-  root: Object[],
+  root: object,
   loading: boolean,
   error: boolean
 };
@@ -24,7 +24,7 @@ interface IRootRequestAction {
 
 interface IRootSuccessAction {
   type: typeof ROOT_SUCCESS,
-  payload: Object[]
+  payload: object
 };
 
 interface IRootFailureAction {
