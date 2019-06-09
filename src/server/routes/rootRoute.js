@@ -42,6 +42,12 @@ exports.__esModule = true;
 var express = require("express");
 var os = require("os");
 var path = require('path');
+var request = require('request');
+var bodyParser = require('body-parser');
+/**
+ * Importing API.
+ */
+var myipApi = require("../api/myipApi.js");
 /**
  * Creating the rootRouter.
  */
@@ -59,26 +65,18 @@ function sleep(ms) {
  */
 rootRouter.route('/')
     .get(function (req, res, next) { return __awaiter(_this, void 0, void 0, function () {
-    var specsList;
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (!(req.header("Content-Type") != "application/json")) return [3 /*break*/, 1];
-                res.status(404);
-                res.sendFile(path.join(__dirname, "../../../build", "index.html"));
-                return [3 /*break*/, 3];
-            case 1:
-                res.status(200);
-                specsList = [
-                    os.arch(),
-                ];
-                return [4 /*yield*/, sleep(3000)];
-            case 2:
-                _a.sent();
-                res.send(specsList);
-                _a.label = 3;
-            case 3: return [2 /*return*/];
+        if (req.header("Content-Type") != "application/json") {
+            res.status(404);
+            res.sendFile(path.join(__dirname, "../../../build", "index.html"));
         }
+        else {
+            request(myipApi, function (error, response, body) {
+                res.status(200);
+                res.send(body);
+            });
+        }
+        return [2 /*return*/];
     });
 }); })
     .post(function (req, res, next) {

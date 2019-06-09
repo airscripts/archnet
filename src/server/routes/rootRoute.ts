@@ -4,6 +4,13 @@
 const express = require("express");
 const os = require("os");
 const path = require('path');
+const request = require('request');
+const bodyParser = require('body-parser');
+
+/**
+ * Importing API.
+ */
+const myipApi = require("../api/myipApi.js");
 
 /**
  * Creating the rootRouter.
@@ -30,14 +37,10 @@ rootRouter.route('/')
   }
 
   else {
-    res.status(200);
-
-    let specsList: Object[] = [
-      os.arch(), 
-    ];
-  
-    await sleep(3000);
-    res.send(specsList);
+    request(myipApi, function (error: any, response: any, body: any) {
+      res.status(200);
+      res.send(body);
+    })
   }
 })
 

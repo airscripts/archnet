@@ -13,7 +13,7 @@ import {
  * Declaring an inital state.
  */
 const initialState: IRoot = {
-    root: [],
+    root: {},
     loading: true,
     error: false
 }
@@ -26,7 +26,7 @@ export function rootReducer(state = initialState, action: IRootActionTypes): IRo
         case ROOT_REQUEST: {
             return {
                 ...state,
-                root: [],
+                root: {},
                 loading: action.payload,
                 error: false
             };
@@ -44,7 +44,7 @@ export function rootReducer(state = initialState, action: IRootActionTypes): IRo
         case ROOT_FAILURE: {
             return {
                 ...state,
-                root: [],
+                root: {},
                 loading: false,
                 error: true
             };

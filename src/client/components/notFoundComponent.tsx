@@ -2,6 +2,7 @@
  * Importing components from libraries.
  */
 import React, { Component } from "react";
+import UndefinedRouteComponent from "./undefinedRouteComponent";
 
 /**
  * Defining the AppProps interface.
@@ -20,7 +21,9 @@ interface IState {
 class NotFound extends Component<AppProps, IState> {
   render() {
     return (
-      <p>404: Not Found.</p>
+      <React.Fragment>
+        <UndefinedRouteComponent />
+      </React.Fragment>
     );
   }
 }
