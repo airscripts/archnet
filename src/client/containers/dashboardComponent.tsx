@@ -6,15 +6,20 @@ import React from "react";
 import clsx from "clsx";
 
 /**
- * Importing styles for apply styles to the components.
- */
-import { useTheme } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-
-/**
  * Importing Components from Material-UI.
  */
-import { Drawer, AppBar, Toolbar, Typography, Divider, IconButton, List, ListItem, ListItemIcon, ListItemText, Paper } from "@material-ui/core";
+import { 
+  Drawer, 
+  AppBar, 
+  Toolbar, 
+  Typography, 
+  Divider, 
+  IconButton, 
+  List, 
+  ListItem, 
+  ListItemIcon, 
+  ListItemText,
+  Paper } from "@material-ui/core";
 
 /**
  * Importing icons that will be placed inside the drawer.
@@ -29,7 +34,10 @@ import Dashboard from "@material-ui/icons/Dashboard";
 /**
  * Importing styles for apply styles to the components.
  */
+import { useTheme } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import { dashboardStyles } from "../styles/dashboardStyles";
+
 
 /**
  * This function declares RootDrawer that comprehends 
@@ -61,7 +69,8 @@ function DashboardComponent(root: any) {
         */}
       <AppBar
         position="fixed"
-        className={clsx(classes.appBar, { [classes.appBarShift]: open,})}
+        className=
+          {clsx(classes.appBar, { [classes.appBarShift]: open,})}
       > 
         <Toolbar>
         <IconButton
@@ -69,7 +78,8 @@ function DashboardComponent(root: any) {
             aria-label="Open drawer"
             onClick={handleDrawerOpen}
             edge="start"    
-            className={clsx(classes.menuButton, {[classes.hide]: open,})}
+            className=
+              {clsx(classes.menuButton, {[classes.hide]: open,})}
         >
             <MenuIcon />
         </IconButton>
@@ -100,14 +110,15 @@ function DashboardComponent(root: any) {
       >
         <div className={classes.toolbar}>
           <IconButton color="inherit" onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {theme.direction === "rtl" ? 
+              <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
 
         <Divider />
 
         <List>
-          <ListItem button>
+          <ListItem button selected={true}>
             <ListItemIcon><Dashboard htmlColor="#fff" /></ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
@@ -128,6 +139,9 @@ function DashboardComponent(root: any) {
         </List>
       </Drawer>
       
+      {/* 
+        * In here you find a paper that represents your IP Address.
+        */}
       <main className={classes.content}>
         <div className={classes.toolbar} />
         
