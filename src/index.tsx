@@ -1,7 +1,10 @@
+/**
+ * Importing all the dependencies.
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './client/containers/mainComponent';
+import Main from './client/cluster/mainComponent';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Main />, document.getElementById('root'));

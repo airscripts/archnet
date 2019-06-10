@@ -19,7 +19,8 @@ const initialState: IRoot = {
 }
 
 /**
- * Defining the reducer that will be used for the root endpoint for dispatching actions result.
+ * Defining the reducer that will be used for the root 
+ * endpoint for dispatching actions result.
  */
 export function rootReducer(state = initialState, action: IRootActionTypes): IRoot {
     switch (action.type) {

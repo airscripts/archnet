@@ -40,8 +40,8 @@ app.use(express.static(path.join(__dirname, 'build')));
  * Redirecting all the routes that are not defined.
  */
 app.use("*", function(req: any, res: any, next: any) {
-  res.status(303);
-  res.redirect('/');
+  res.status(404);
+  res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 
 /*

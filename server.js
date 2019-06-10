@@ -33,8 +33,8 @@ app.use(express.static(path.join(__dirname, 'build')));
  * Redirecting all the routes that are not defined.
  */
 app.use("*", function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(404);
+    res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 /*
  * Setting the Express App to listen state.

@@ -5,9 +5,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 /**
- * Importing Drawer.
+ * Importing Dashboard.
  */
-import DashboardComponent from "./dashboardComponent";
+import DashboardComponent from "../containers/dashboardComponent";
 
 /**
  * Importing Material-UI Components.
@@ -56,12 +56,11 @@ class Root extends Component<AppProps, IState> {
 
   async componentDidMount() {
     await this.props.loadRoot();
-
     await this.sleep(3000);
 
     await this.setState({
       loading: false,
-    })
+    });
   }
 
   sleep(ms: number) {
