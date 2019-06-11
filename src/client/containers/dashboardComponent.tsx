@@ -19,7 +19,7 @@ import {
   ListItem, 
   ListItemIcon, 
   ListItemText,
-  Paper } from "@material-ui/core";
+} from "@material-ui/core";
 
 /**
  * Importing icons that will be placed inside the drawer.
@@ -37,7 +37,7 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import { useTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { dashboardStyles } from "../styles/dashboardStyles";
-
+import AboutYou from "../components/aboutYouComponent";
 
 /**
  * This function declares RootDrawer that comprehends 
@@ -46,7 +46,7 @@ import { dashboardStyles } from "../styles/dashboardStyles";
  * to the constants, so that they can be used in the components
  * to style them.
  */
-function DashboardComponent(root: any) {
+function DashboardComponent(dashboardRoot: any) {
   const classes = dashboardStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -144,16 +144,7 @@ function DashboardComponent(root: any) {
         */}
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        
-        <Paper className={classes.paper}>
-          <Typography variant="h6" component="h3">
-            Your IP Address
-          </Typography>
-          
-          <Typography component="p">
-            {root.root.ip}
-          </Typography>
-        </Paper>
+        <AboutYou aboutRoot={dashboardRoot} />
       </main>
     </div>
   );
