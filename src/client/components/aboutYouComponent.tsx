@@ -47,7 +47,7 @@ function AboutYou(aboutRoot: any) {
   const [copyState, setCopyState] = React.useState(false);
 
   return ( 
-    <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+    <Slide direction="up" in={true} mountOnEnter unmountOnExit {...(true ? {timeout: 750} : {})}>
       <Paper className={classes.paper}>
         <Typography variant="h6" component="h3">
           About you
