@@ -87,11 +87,5 @@ export const dashboardStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
-
-    paper: {
-      padding: theme.spacing(3, 2),
-      width: 320,
-      backgroundColor: "#212121"
-    },
   }),
 );

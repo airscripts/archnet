@@ -87,7 +87,7 @@ class Root extends Component<AppProps, IState> {
     else if (this.props.root.root !== undefined) {
       return (
         <React.Fragment>
-          <DashboardComponent root={this.props.root.root} />
+          <DashboardComponent dashboardRoot={this.props.root.root} />         
         </React.Fragment>
       );
     }
