@@ -30,7 +30,7 @@ function sleep(ms: number) {
 rootRouter.route('/')
 .get(async (req: any, res: any, next: any) => {
   if(req.header("Content-Type") != "application/json") {
-    res.status(404);
+    res.status(405);
     res.sendFile(path.join(__dirname, "../../../build", "index.html"));
   }
 
@@ -43,18 +43,18 @@ rootRouter.route('/')
 })
 
 .post((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 })
 
 .put((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 })
 
 .delete((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 });
 
 module.exports = rootRouter;

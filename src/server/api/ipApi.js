@@ -76,14 +76,14 @@ ipRouter.route('/')
     });
 }); })
     .post(function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.end("Error: POST Operation not supported.");
 })
     .put(function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.end("Error: PUT Operation not supported.");
 })["delete"](function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.end("Error: DELETE Operation not supported");
 });
 module.exports = ipRouter;
