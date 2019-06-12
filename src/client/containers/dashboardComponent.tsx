@@ -151,10 +151,6 @@ function DashboardComponent(dashboardRoot: any) {
             <Grid item xs={"auto"} className={classes.gridMargin}>
               <AboutYou aboutRoot={dashboardRoot} />
             </Grid>
-
-            <Grid item xs={"auto"} className={classes.gridMargin}>
-              <AboutYou aboutRoot={dashboardRoot} />
-            </Grid>
           </Grid>
         </main>
       </Slide>

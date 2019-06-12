@@ -9,6 +9,7 @@ const cors = require('cors');
  * Importing routers.
  */
 const rootRouter = require("./src/server/routes/rootRoute");
+const ipRouter = require("./src/server/api/ipApi");
 
 /*
  * Initializing the Express App.
@@ -21,9 +22,15 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 /**
- * Setting the endpoints.
+ * Setting the core endpoints.
  */
 app.use("/root", rootRouter);
+
+
+/**
+ * Setting the api endpoints.
+ */
+app.use("/api/ip", ipRouter);
 
 /**
  * Setting up the use of CORS Policy.
