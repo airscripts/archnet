@@ -40,7 +40,6 @@ exports.__esModule = true;
  * Importing dependencies.
  */
 var express = require("express");
-var path = require('path');
 var request = require('request');
 /**
  * Importing API.
@@ -49,28 +48,27 @@ var myipApi = require("../core/myipApi.js");
 /**
  * Creating the rootRouter.
  */
-var rootRouter = express.Router();
-/**
- * Defining a sleep function
- */
-function sleep(ms) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, ms);
-    });
-}
+var ipRouter = express.Router();
 /**
  * Creating the endpoint.
  */
-rootRouter.route('/')
+ipRouter.route('/')
     .get(function (req, res, next) { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         if (req.header("Content-Type") != "application/json") {
-            res.status(404);
-            res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+            request(myipApi, function (error, response, body) {
+                res.status(200);
+                res.header("Content-Type", "application/json");
+                res.send("Hello, surfer! :)"
+                    + "\nHere it is the information that you have requested for: "
+                    + "\n\n=> " + body + "\n\n"
+                    + "Thank you! Come back again!\n");
+            });
         }
         else {
             request(myipApi, function (error, response, body) {
                 res.status(200);
+                res.header("Content-Type", "application/json");
                 res.send(body);
             });
         }
@@ -88,4 +86,4 @@ rootRouter.route('/')
     res.status(303);
     res.redirect('/');
 });
-module.exports = rootRouter;
+module.exports = ipRouter;
