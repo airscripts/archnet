@@ -31,8 +31,20 @@ export const aboutYouStyles = makeStyles((theme: Theme) =>
       fontSize: 20,
     },
 
+    aboutTypography: {
+      marginBottom: 15,
+    },
+
     ipTypography: {
       marginTop: 11
+    },
+
+    countryTypography: {
+      marginTop: 2,
+    },
+
+    homeIcon: {
+      marginTop: 2,
     },
 
     wifiIcon: {

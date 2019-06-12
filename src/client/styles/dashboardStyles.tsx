@@ -87,5 +87,9 @@ export const dashboardStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
+
+    gridMargin: {
+      margin: "15px 20px 20px 15px",
+    },
   }),
 );

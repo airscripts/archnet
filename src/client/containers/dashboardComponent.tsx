@@ -19,6 +19,8 @@ import {
   ListItem, 
   ListItemIcon, 
   ListItemText,
+  Slide,
+  Grid
 } from "@material-ui/core";
 
 /**
@@ -142,10 +144,20 @@ function DashboardComponent(dashboardRoot: any) {
       {/* 
         * In here you find a paper that represents your IP Address.
         */}
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <AboutYou aboutRoot={dashboardRoot} />
-      </main>
+      <Slide direction="up" in={true} mountOnEnter unmountOnExit {...(true ? {timeout: 750} : {})}>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <Grid container>
+            <Grid item xs={"auto"} className={classes.gridMargin}>
+              <AboutYou aboutRoot={dashboardRoot} />
+            </Grid>
+
+            <Grid item xs={"auto"} className={classes.gridMargin}>
+              <AboutYou aboutRoot={dashboardRoot} />
+            </Grid>
+          </Grid>
+        </main>
+      </Slide>
     </div>
   );
 }
