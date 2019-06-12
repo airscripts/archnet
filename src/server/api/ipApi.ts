@@ -44,18 +44,18 @@ ipRouter.route('/')
 })
 
 .post((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.end("Error: POST Operation not supported.");
 })
 
 .put((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.end("Error: PUT Operation not supported.");
 })
 
 .delete((req: any, res: any, next: any) => {
-  res.status(303);
-  res.redirect('/');
+  res.status(405);
+  res.end("Error: DELETE Operation not supported");
 });
 
 module.exports = ipRouter;

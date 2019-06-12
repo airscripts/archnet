@@ -65,7 +65,7 @@ rootRouter.route('/')
     .get(function (req, res, next) { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         if (req.header("Content-Type") != "application/json") {
-            res.status(404);
+            res.status(405);
             res.sendFile(path.join(__dirname, "../../../build", "index.html"));
         }
         else {
@@ -78,14 +78,14 @@ rootRouter.route('/')
     });
 }); })
     .post(function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 })
     .put(function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 })["delete"](function (req, res, next) {
-    res.status(303);
-    res.redirect('/');
+    res.status(405);
+    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
 });
 module.exports = rootRouter;
