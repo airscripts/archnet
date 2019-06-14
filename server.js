@@ -45,5 +45,5 @@ app.use("*", function (req, res, next) {
  * Setting the Express App to listen state.
  */
 app.listen(port, function () {
-    console.log("The server is listening on " + port + ".");
+    console.log("Archie is listening on " + port + ".");
 });

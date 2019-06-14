@@ -27,6 +27,11 @@ import { loadRoot } from "../store/actions/rootActions";
 import { AppState } from "../store/store";
 
 /**
+ * Importing scripts.
+ */
+import sleep from "../scripts/sleep";
+
+/**
  * Defining the AppProps interface.
  */
 interface AppProps {
@@ -56,16 +61,10 @@ class Root extends Component<AppProps, IState> {
 
   async componentDidMount() {
     await this.props.loadRoot();
-    await this.sleep(3000);
+    await sleep(1500);
 
     await this.setState({
       loading: false,
-    });
-  }
-
-  sleep(ms: number) {
-    return new Promise(resolve => {
-      setTimeout(resolve, ms);
     });
   }
   
@@ -79,9 +78,7 @@ class Root extends Component<AppProps, IState> {
           alignContent="center"
           className="rootComponentLoading"
         >
-          <CircularProgress 
-            color="inherit" 
-          />
+          <CircularProgress color="inherit" />
         </Grid>
       );
     }
@@ -89,9 +86,7 @@ class Root extends Component<AppProps, IState> {
     else if (this.props.root.root !== undefined) {
       return (
         <React.Fragment>
-          <DashboardComponent 
-            dashboardRoot={this.props.root.root} 
-          />         
+          <DashboardComponent dashboardRoot={this.props.root.root} />         
         </React.Fragment>
       );
     }
@@ -100,8 +95,6 @@ class Root extends Component<AppProps, IState> {
 
 /**
  * Mapping redux store state to component props.
- * 
- * @param state
  */
 const mapStateToProps = (state: AppState) => {
   return {

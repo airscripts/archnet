@@ -16,15 +16,6 @@ const myipApi = require("../core/myipApi.js");
 const rootRouter = express.Router();
 
 /**
- * Defining a sleep function
- */
-function sleep(ms: number) {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-}
-
-/**
  * Creating the endpoint.
  */
 rootRouter.route('/')

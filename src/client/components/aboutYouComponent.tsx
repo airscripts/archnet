@@ -32,7 +32,7 @@ import { aboutYouStyles } from "../styles/aboutYouStyles";
 /**
  * Importing utils.
  */
-import copyToClipboard  from "../utils/copyToClipboard";
+import copyToClipboard  from "../scripts/copyToClipboard";
 
 /**
  * Importing transitions.
@@ -53,7 +53,11 @@ function AboutYou(aboutRoot: any) {
         * About You Paper, that display information about your
         * IP Address, Country and CC.
         */}
-      <Typography variant="h6" component="h3" className={classes.aboutTypography}>
+      <Typography 
+        variant="h6" 
+        component="h3"
+        className={classes.aboutTypography}
+      >
         About you
       </Typography>
       
