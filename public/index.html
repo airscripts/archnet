@@ -1,42 +1,78 @@
+<!--
+  HTML5 Document: index.html
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html 
+  lang="en"
+>
   <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"></link>
+    <!-- 
+      Setting up the meta tags indicating the tile color, encoding
+      and the viewport's settings.
+    -->
     <meta
       name="viewport"
-      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+      content=
+        "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" 
     />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+    <meta name="msapplication-TileColor" content="#2196f3" />
+    <meta name="msapplication-TileImage" content="" />
+    <meta name="theme-color" content="#2196f3" />
+    <meta charset="utf-8" />
+  
+    <!--
+      Setting up the favicon and the Google Font used in Archnet.
+    -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <link 
+      href="https://fonts.googleapis.com/css?family=Open+Sans" 
+      rel="stylesheet" 
+    />
+
+    <!--
+      Setting up all the icons that will be used to support different 
+      devices and formats.
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="">
+    <link rel="apple-touch-icon" sizes="60x60" href="">
+    <link rel="apple-touch-icon" sizes="72x72" href="">
+    <link rel="apple-touch-icon" sizes="76x76" href="">
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    <link rel="apple-touch-icon" sizes="120x120" href="">
+    <link rel="apple-touch-icon" sizes="144x144" href="">
+    <link rel="apple-touch-icon" sizes="152x152" href="">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <link rel="icon" type="image/png" sizes="96x96" href="">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+
+    <!-- 
+      Indicating where is placed the manifest.json that contains other
+      informations that will be useful if the user uses Archnet on his
+      Android smartphone.
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+    <!--
+      Declaring the title of the web application.
     -->
     <title>Archnet</title>
-  </head>
+    </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      If the user doesn't have Javascript enabled will be represented a 
+      message telling him that he will need to enable it.
     -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!--
+      Otherwise, React, will render it properly.
+    -->
+    <div id="root"></div>
   </body>
 </html>

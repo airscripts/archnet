@@ -34,6 +34,7 @@ class Main extends Component {
     return (
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
+        
         <Provider store={store}>
           <Router>
             <Switch>

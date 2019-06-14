@@ -32,14 +32,14 @@ import { AppState } from "../store/store";
 interface AppProps {
   root: any,
   loadRoot: Function,
-}
+};
 
 /**
  * Defining the IState interface.
  */
 interface IState {
-  loading: boolean
-}
+  loading: boolean,
+};
 
 /**
  * Root Component that will be represented when the user
@@ -73,13 +73,15 @@ class Root extends Component<AppProps, IState> {
     if (this.state.loading) {
       return (
         <Grid
-        container
-        direction="column"
-        justify="center"
-        alignContent="center"
-        className="rootComponentLoading"
+          container
+          direction="column"
+          justify="center"
+          alignContent="center"
+          className="rootComponentLoading"
         >
-          <CircularProgress color="inherit" />
+          <CircularProgress 
+            color="inherit" 
+          />
         </Grid>
       );
     }
@@ -87,7 +89,9 @@ class Root extends Component<AppProps, IState> {
     else if (this.props.root.root !== undefined) {
       return (
         <React.Fragment>
-          <DashboardComponent dashboardRoot={this.props.root.root} />         
+          <DashboardComponent 
+            dashboardRoot={this.props.root.root} 
+          />         
         </React.Fragment>
       );
     }
