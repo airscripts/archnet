@@ -12,7 +12,7 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 /**
- * Importing components.
+ * Importing components and Redux Store.
  */
 import Root from "./rootComponent";
 import NotFound from "../containers/notFoundComponent";

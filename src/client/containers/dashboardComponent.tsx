@@ -144,11 +144,16 @@ function DashboardComponent(dashboardRoot: any) {
       {/* 
         * In here you find a paper that represents your IP Address.
         */}
-      <Slide direction="up" in={true} mountOnEnter unmountOnExit {...(true ? {timeout: 750} : {})}>
+      <Slide
+       direction="up" 
+       in={true} 
+       mountOnEnter 
+       unmountOnExit {...(true ? {timeout: 750} : {})}
+      >
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <Grid container>
-            <Grid item xs={"auto"} className={classes.gridMargin}>
+            <Grid item xs={"auto"}>
               <AboutYou aboutRoot={dashboardRoot} />
             </Grid>
           </Grid>

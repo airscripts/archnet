@@ -21,6 +21,6 @@
   },
   "include": [
     "src",
-    "public/main.js"
+    "public/main.js", "src/client/scripts/copyToClipboard.ts"
   ]
 }
