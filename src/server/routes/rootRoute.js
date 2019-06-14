@@ -54,11 +54,21 @@ var rootRouter = express.Router();
  * Creating the endpoint.
  */
 rootRouter.route('/')
+    /**
+     * Checking if there is a request on other not concerned HTTP methods.
+     */
+    .all(function (req, res, next) {
+    if (req.method !== "GET" && req.method !== "POST" && req.method !== "PUT" && req.method !== "DELETE") {
+        res.status(405);
+        res.render("405", { error: res.statusCode, method: req.method });
+    }
+    next();
+})
     .get(function (req, res, next) { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         if (req.header("Content-Type") != "application/json") {
             res.status(405);
-            res.render("405", { error: res.statusCode });
+            res.render("405", { error: res.statusCode, method: req.method });
         }
         else {
             request(myipApi, function (error, response, body) {
@@ -71,13 +81,13 @@ rootRouter.route('/')
 }); })
     .post(function (req, res, next) {
     res.status(405);
-    res.render("405", { error: res.statusCode });
+    res.render("405", { error: res.statusCode, method: req.method });
 })
     .put(function (req, res, next) {
     res.status(405);
-    res.render("405", { error: res.statusCode });
+    res.render("405", { error: res.statusCode, method: req.method });
 })["delete"](function (req, res, next) {
     res.status(405);
-    res.render("405", { error: res.statusCode });
+    res.render("405", { error: res.statusCode, method: req.method });
 });
 module.exports = rootRouter;
