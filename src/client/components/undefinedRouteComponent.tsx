@@ -42,7 +42,7 @@ function UndefinedRouteComponent() {
         className={classes.grid}
       >
         <Typography variant="h6">
-          Error: 404 Not Found.
+          {`Archie cannot help you... :(`}
         </Typography>
       </Grid>
     </div>

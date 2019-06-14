@@ -22,7 +22,7 @@ rootRouter.route('/')
 .get(async (req: any, res: any, next: any) => {
   if(req.header("Content-Type") != "application/json") {
     res.status(405);
-    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+    res.render("405", {error: res.statusCode});
   }
 
   else {
@@ -35,17 +35,17 @@ rootRouter.route('/')
 
 .post((req: any, res: any, next: any) => {
   res.status(405);
-  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+  res.render("405", {error: res.statusCode});
 })
 
 .put((req: any, res: any, next: any) => {
   res.status(405);
-  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+  res.render("405", {error: res.statusCode});
 })
 
 .delete((req: any, res: any, next: any) => {
   res.status(405);
-  res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+  res.render("405", {error: res.statusCode});
 });
 
 module.exports = rootRouter;

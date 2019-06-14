@@ -51,14 +51,6 @@ var myipApi = require("../core/myipApi.js");
  */
 var rootRouter = express.Router();
 /**
- * Defining a sleep function
- */
-function sleep(ms) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, ms);
-    });
-}
-/**
  * Creating the endpoint.
  */
 rootRouter.route('/')
@@ -66,7 +58,7 @@ rootRouter.route('/')
     return __generator(this, function (_a) {
         if (req.header("Content-Type") != "application/json") {
             res.status(405);
-            res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+            res.render("405", { error: res.statusCode });
         }
         else {
             request(myipApi, function (error, response, body) {
@@ -79,13 +71,13 @@ rootRouter.route('/')
 }); })
     .post(function (req, res, next) {
     res.status(405);
-    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+    res.render("405", { error: res.statusCode });
 })
     .put(function (req, res, next) {
     res.status(405);
-    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+    res.render("405", { error: res.statusCode });
 })["delete"](function (req, res, next) {
     res.status(405);
-    res.sendFile(path.join(__dirname, "../../../build", "index.html"));
+    res.render("405", { error: res.statusCode });
 });
 module.exports = rootRouter;
