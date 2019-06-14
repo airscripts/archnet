@@ -1,9 +1,10 @@
 /*
  * Defining the modules required for the server.
  */
-var express = require('express');
-var path = require('path');
-var cors = require('cors');
+var express = require("express");
+var path = require("path");
+var cors = require("cors");
+var pug = require("pug");
 /**
  * Importing routers.
  */
@@ -13,6 +14,11 @@ var ipRouter = require("./src/server/api/ipApi");
  * Initializing the Express App.
  */
 var app = express();
+/**
+ * Initializing pug.
+ */
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "./src/server/templates"));
 /*
  * Defining useful constants.
  */
@@ -33,13 +39,13 @@ app.options('*', cors());
 /*
  * Defining static files directory root.
  */
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, "build")));
 /*
  * Redirecting all the routes that are not defined.
  */
-app.use("*", function (req, res, next) {
+app.use('*', function (req, res, next) {
     res.status(404);
-    res.sendFile(path.join(__dirname, "./build", "index.html"));
+    res.render("404", { error: res.statusCode });
 });
 /*
  * Setting the Express App to listen state.
