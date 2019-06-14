@@ -1,0 +1,9 @@
+body {
+    height: 100vh;
+    font-family: "Open Sans", "sans-serif";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    color: white;
+  }
