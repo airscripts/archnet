@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, "build")));
 /*
  * Redirecting all the routes that are not defined.
  */
-app.use('*', function (req, res, next) {
+app.use('*', function (req, res) {
     res.status(404);
     res.render("404", { error: res.statusCode });
 });
