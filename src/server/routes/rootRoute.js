@@ -73,6 +73,7 @@ rootRouter.route('/')
         else {
             request(myipApi, function (error, response, body) {
                 res.status(200);
+                console.log(body);
                 res.send(body);
             });
         }

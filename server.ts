@@ -21,7 +21,7 @@ const app = express();
  * Initializing pug.
  */
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "./src/server/templates"));
+app.set("views", path.join(__dirname, "./src/server/views"));
 
 /*
  * Defining useful constants.
@@ -53,9 +53,12 @@ app.use(express.static(path.join(__dirname, "build")));
 /*
  * Redirecting all the routes that are not defined.
  */
-app.use('*', function(req: any, res: any) {
-  res.status(404);
-  res.render("404", {error: res.statusCode});
+app.use(function(err: any, req: any, res: any, next: any) {
+  return res.status(500).render("500", { error: res.statusCode });
+});
+
+app.use(function(req: any, res: any, next: any) {
+  return res.status(404).render("404", { error: res.statusCode });
 });
 
 /*

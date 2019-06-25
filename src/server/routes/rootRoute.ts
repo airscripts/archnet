@@ -40,6 +40,7 @@ rootRouter.route('/')
   else {
     request(myipApi, function (error: any, response: any, body: any) {
       res.status(200);
+      console.log(body);
       res.send(body);
     })
   }
