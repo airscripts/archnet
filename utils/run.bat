@@ -1,5 +1,5 @@
 @echo off
-:: This batch file is used to build the project and run it.
+:: This batch file is used to run the project's server.
 
 echo Hello, %USERNAME%!
 echo.
@@ -7,18 +7,14 @@ echo.
 echo -------------------------------------------------------
 echo.
 
-:: Building the project...
-echo Starting to build the project...
+:: Running the server
+echo Running the server...
 cd C:\Users\%USERNAME%\dev\github\archnet
 
 echo.
 dir
 echo.
 
-call yarn build
-echo Your project is built!
-
-echo.
 echo Running your server...
 call node server.js
 echo.
