@@ -21,9 +21,4 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-
-  "include": [
-    "src",
-    "public/main.js", "src/client/scripts/copyToClipboard.ts"
-  ]
 }
