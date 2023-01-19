@@ -1,5 +1,4 @@
 import chalk from "chalk";
-import fetch from "node-fetch";
 import { MY_IP_API } from "../../constants/ip"
 
 export async function getIp() {
@@ -10,7 +9,7 @@ export async function getIp() {
     });
 
     const json = await response.json();
-    console.log(chalk.blue("Hey surfer! Your ip is: ") + json.ip);
+    console.log(chalk.blue(`Your IP is: ${json.ip}.`));
   } 
   
   catch (error) {
