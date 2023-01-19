@@ -1,0 +1,1 @@
+export const MY_IP_API = `https://api.myip.com`;
