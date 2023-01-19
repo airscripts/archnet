@@ -1,12 +1,6 @@
-/**
- * Requiring node modules.
- */
-const repl = require("repl");
-const chalk = require("chalk");
+import repl from "repl";
+import chalk from "chalk";
 
-/**
- * Requiring Archnet's REPL modules.
- */
 const cls = require("./modules/clsModule");
 const ip = require("./modules/ipModule");
 
@@ -16,30 +10,21 @@ console.log(chalk.blue(
   + "\nType .help to check what I can do for you. :)\n"
 ));
 
-/**
- * Starting replServer.
- */
 const replServer = repl.start({
   prompt: "$ Archnet: ",
   input: process.stdin,
   output: process.stdout,
 });
 
-/**
- * Re-defining standard REPL commands.
- */
 replServer.on('exit', () => {
   console.log(chalk.blue("Come back whenever you want to! :)"));
   process.exit();
 });
 
-/**
- * Defining REPL commands.
- */
 replServer.defineCommand('cls', {
   help: "Using .cls will clear the console.",
   action() {
-    cls.clearConsole();
+    console.clear();
 
     console.log(chalk.blue(
       "\nWelcome to Archnet!"
