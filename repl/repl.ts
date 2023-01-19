@@ -1,8 +1,6 @@
 import repl from "repl";
 import chalk from "chalk";
-
-const cls = require("./modules/clsModule");
-const ip = require("./modules/ipModule");
+import { getIp } from "./modules/ipModule";
 
 console.log(chalk.blue(
   "\nWelcome to Archnet!"
@@ -39,25 +37,7 @@ replServer.defineCommand('cls', {
 replServer.defineCommand('ip', {
   help: "It gives you back your current IP Address.",
   async action() {
-    await ip.getIp();
-    console.log("");
-    this.displayPrompt();
-  }
-});
-
-replServer.defineCommand("country", {
-  help: "It gives you back your current country.",
-  async action() {
-    await ip.getCountry();
-    console.log("");
-    this.displayPrompt();
-  }
-});
-
-replServer.defineCommand("cc", {
-  help: "It gives you back your current country code.",
-  async action() {
-    await ip.getCountryCode();
+    await getIp();
     console.log("");
     this.displayPrompt();
   }
