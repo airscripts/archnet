@@ -3,10 +3,10 @@ import chalk from "chalk";
 
 import { getIp } from "./modules/ip";
 
-console.log(chalk.blue(`
-Welcome to Archnet!
-Type .help to check what I can do for you.
-`));
+console.log(chalk.blue(
+`Welcome to Archnet!
+Type .help to check what I can do for you.`
+));
 
 const replServer = repl.start({
   prompt: "archnet > ",
