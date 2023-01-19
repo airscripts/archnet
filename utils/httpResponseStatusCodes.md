@@ -1,1 +1,0 @@
-[HTTP Response Status Codes](https://developer.mozilla.org/it/docs/Web/HTTP/Status)
