@@ -1,7 +1,7 @@
 import repl from "repl";
 import chalk from "chalk";
 
-import { getIp } from "./modules/ip";
+import modules from "./modules";
 
 console.log(chalk.blue(
 `Welcome to Archnet!
@@ -32,7 +32,7 @@ replServer.defineCommand('ip', {
   help: "Check your current IP address.",
 
   async action() {
-    await getIp();
+    await modules.ip.getIp();
     this.displayPrompt();
   }
 });

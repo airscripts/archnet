@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { MY_IP_API } from "../constants/ip"
+import { MY_IP_API } from "../constants/ip";
 
 export async function getIp() {
   try {
@@ -8,9 +8,9 @@ export async function getIp() {
       headers: { "Content-Type": "application/json" },
     })).json();
 
-    console.log(chalk.blue(`Your IP is: ${response.ip}.`));
-  } 
-  
+    console.log(chalk.blue(`Your public IP is: ${response.ip}.`));
+  }
+
   catch (error) {
     console.error(chalk.red("An error has occurred fetching your public IP."));
   }
