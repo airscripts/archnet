@@ -3,9 +3,12 @@ import constants from "../constants"
 
 export async function getIp() {
   try {
+    const method = "GET";
+    const headers = { "Content-Type": "application/json" };
+
     const response = await (await fetch(constants.ip.ipApi, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
+      method: method,
+      headers: headers,
     })).json();
 
     console.log(chalk.blue(`Your public IP is: ${response.ip}.`));
