@@ -2,6 +2,7 @@ import repl from "repl";
 import chalk from "chalk";
 
 import modules from "./modules";
+import constants from "./constants";
 
 console.log(chalk.blue(
 `Welcome to Archnet!
@@ -14,12 +15,12 @@ const replServer = repl.start({
   output: process.stdout,
 });
 
-replServer.on('exit', () => {
+replServer.on(constants.commands.exit, () => {
   console.log(chalk.blue("Come back whenever you want to!"));
   process.exit();
 });
 
-replServer.defineCommand('cls', {
+replServer.defineCommand(constants.commands.cls, {
   help: "Using .cls will clear the console.",
 
   action() {
@@ -28,7 +29,7 @@ replServer.defineCommand('cls', {
   }
 });
 
-replServer.defineCommand('ip', {
+replServer.defineCommand(constants.commands.ip, {
   help: "Check your current IP address.",
 
   async action() {
