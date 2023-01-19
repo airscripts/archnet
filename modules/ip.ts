@@ -1,11 +1,11 @@
 import chalk from "chalk";
-import { MY_IP_API } from "../../constants/ip"
+import { MY_IP_API } from "../constants/ip"
 
 export async function getIp() {
   try {
     const response = await fetch(MY_IP_API, {
       method: "GET",
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     });
 
     const json = await response.json();

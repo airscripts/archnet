@@ -1,6 +1,6 @@
 import repl from "repl";
 import chalk from "chalk";
-import { getIp } from "./modules/ipModule";
+import { getIp } from "./modules/ip";
 
 console.log(chalk.blue(
   "\nWelcome to Archnet!"
